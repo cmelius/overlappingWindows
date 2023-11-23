@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Overlapping Windows</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="./render.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            setup();
+            window.requestAnimationFrame(() => {
+                tick();
+            });
+        });
+
+        window.addEventListener('beforeunload', () => {
+            alert('Closing??')
+            reset();
+        });
+
+        window.addEventListener('resize', () => {
+            resize();
+        });
+    </script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+</html>
